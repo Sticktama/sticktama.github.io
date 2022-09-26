@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Form</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link rel="stylesheet" media="screen and (min-width: 1px) and (max-width: 2000px)" type="text/css" href="status.css">
+        <!--^^^For everyone? im using a laptop that has a wide screen, so if it breaks my bad.^^^-->
+        <!--^^^Although, i've conducted numerous stress tests and i'm hoping it was worth it^^^-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="javascript"></script>
+    </head>
+    <body>
+        <audio id="blood" src="shed.mp3">
+        </audio>
+        <video class="status" id="storm" src="verg.mp4"></video>
+            <form id="form" onsubmit="return false">
+            <!--The man in the mirror nods his head-->
+            <div class="flexbox">
+            <div class="flex">
+                <div>
+                <fieldset> 
+                    <legend>Customer Information</legend>
+                    <table style="margin-left:-3px" cellspacing="6px">
+                    <tr>
+                        <td><label for="name">Name<span class="red">*</span></label></td>
+                        <td><input type="text" id="name" name="name" placeholder="first and last name" oninput="validate(this)" required></input></td>
+                    </tr>
+                    <tr>
+                        <td><label for="stad">Street address</label></td>
+                        <td><input type="text" id="stad" name="stad" oninput="validate(this)"></input></td>
+                    </tr>
+                    <tr>
+                        <td><label for="city">City</label></td>
+                        <td><input type="text" id="city" name="city" value="Ormond Beach" oninput="validate(this)"></input></td>
+                    </tr>
+                    <tr>
+                        <td><label for="state">State</label></td>
+                        <td><input type="text" id="state" name="state" value="FL" oninput="validate(this)"></input></td>
+                    </tr>
+                    <tr>
+                        <td><label for="post">Postal code</label></td>
+                        <td><input type="text" id="post" name="post" placeholder="nnnnn (-nnnn)" pattern="^\d{4}|\b\d{5}\b(?:[- ]{1}\d{4})?$" title="Enter postal code in the US or PH format" oninput="validate(this)"></input></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Phone number</label></td>
+                        <td><input type="tel" id="phone" name="phone" placeholder="(nnn) nnn-nnnn" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" title="Enter valid 10-digit mobile number" oninput="validate(this)"></input></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">E-mail<span class="red">*</span></label></td>
+                        <td><input type="email" id="email" name="email" oninput="validate(this)" required></input></td>
+                    </tr>
+                    <table>
+                    <tr class="hear">
+                        <td class="hear"><label for="hear">Where did you hear about us? <br> (select all that apply)</label></td>
+                        <td><select name="hear" size="5" multiple="multiple">
+                            <option value="Internet">Internet</option>
+                            <option value="Magazine">Magazine</option>
+                            <option value="Newspaper">Newspaper</option>
+                            <option value="Word of Mouth">Word of Mouth</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        </td>
+                    </tr>
+                    </table>
+                    <table style="margin-left:-3px" cellspacing="6px">
+                    <tr>
+                        <td><label for="dish">What's your favorite dish?</label></td>
+                        <td><input type="text" id="dish" name="dish"></input></td>
+                    </tr>
+                    </table>
+                    <table>
+                        <tr>
+                        <td style="width: 30%;">
+                            <label for="dine1">How many times do you dine out per month?</label>
+                        </td>
+                        <td>
+                        <input class="dine2" type="text" id="dine" name="dine" value="1"></input>
+                        </td>
+                        </tr>
+                    </table>
+                    <table cellspacing="6px">
+                    <tr>
+                        <td class="check">
+                        <input type="checkbox" id="mail" name="mail" value="Add to mailing list"></input>
+                        </td>
+                        <td style="width: 100%;">
+                        <label style="text-align:left" for="mail">Add me to your mailing list for great coupons and specials!</label>
+                        </td>
+                    </tr>
+                    </table>
+                </fieldset> 
+                </div>
+                <div>
+                <fieldset> 
+                    <legend>Share Your Experience at Red Ball Plaza</legend>
+                    <table style="margin-left: -7px;" cellspacing="6px" id="form2">
+                    <tr>
+                        <td><label for="date">Date of visit</label></td>
+                        <td><input type="date" id="date" name="date"></input></td>
+                    </tr>
+                    <tr>
+                        <td><label for="order">Order Type</label></td>
+                        <td style="padding-left:2px;"><select style="float: right; margin-right:0px;" name="order" id="order"></input>
+                            <option value="Dine in">Dine in
+                            <option value="Take out">Take out
+                            <option value="Deliver">Delivery
+                            </select>
+                        </td>
+                    </tr>
+                    </table>
+                    <table cellspacing="6px">
+                        
+                            <label style="float: left; width: 205px;" for="friendly">Was your service friendly?</label>
+                        <table style="border: 2px solid grey; width: 240px; height: 45px; margin-bottom: 6px;">
+                            <td style="width:0px; vertical-align: middle;"><label style="float:left; margin-left: 10px;"><input style="width: 35px; margin-right: -2px; margin-left:0px;" type="radio" id="friendly" name="friendly" value="Yes"/>Yes</label></td>
+                            <td style="width:80px; vertical-align: middle;"><label style="float:left; margin-left: -15px;"><input style="width: 35px; margin-left: 0px;" type="radio" id="friendly" name="friendly" value="No"/>No</label></td>
+                        </table>
+                    <tr>
+                        <label style="float: left; width: 205px;" for="correct">Was your order correct?</label>
+                        <table style="border: 2px solid grey; width: 240px; height: 45px; margin-bottom: 6px;">
+                            <td style="width:0px; vertical-align: middle;"><label style="float:left; margin-left: 10px;"><input style="width: 35px; margin-right: -2px; margin-left:0px;" type="radio" id="correct" name="correct" value="Yes"/>Yes</label></td>
+                            <td style="width:80px; vertical-align: middle;"><label style="float:left; margin-left: -15px;"><input style="width: 35px; margin-left: 0px;" type="radio" id="correct" name="correct" value="No"/>No</label></td>
+                        </table>
+                    </tr>
+                    <tr>
+                        <label style="float: left; width: 205px;" for="hot">Was your food hot?</label>
+                        <table style="border: 2px solid grey; width: 240px; height: 45px;">
+                            <td style="width:0px; vertical-align: middle;"><label style="float:left; margin-left: 10px;"><input style="width: 35px; margin-right: -2px; margin-left:0px;" type="radio" id="hot" name="hot" value="Yes"/>Yes</label></td>
+                            <td style="width:80px; vertical-align: middle;"><label style="float:left; margin-left: -15px;"><input style="width: 35px; margin-left: 0px;" type="radio" id="hot" name="hot" value="No"/>No</label></td>
+                        </table>
+                    </tr>
+                    </table>
+                    <table style="margin-left:-6px" cellspacing="6px">
+                        <tr>
+                            <td style="width:200px;"><label for="rate">Rate the overall service <br> (0=poor; 10=great)</label></td>
+                            <td style="width:0px; text-align:right; vertical-align:middle; padding-right:5px;"><label>0</label></td>
+                            <td style="width:220px;"><input type="range" id="rate" name="rate" min="0" max="10"></input></td>
+                            <td style="width:0px; text-align:left; vertical-align:middle;"><label>10</label>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="exp">
+                        <label for="exp">Tell us more about your experience!</label>
+                        <br>
+                    </div>
+                    <div>
+                        <textarea style="font-family: Verdana, Geneva, Tahoma, sans-serif;" cols="50" rows="6" type="text" id="exp" name="exp" oninput="validate(this)"></textarea>
+                    </div>
+                </fieldset> 
+                </div>
+            </div>
+        </div>
+            <br>
+        <div class="flex">
+        <input class="button" type="submit" value="Submit My Survey" onclick="isString();"></input>
+        <input class="button" type="button" value="Cancel" onclick="document.getElementById('form').reset(); document.getElementById('blood').pause()"></input>
+        </div>
+        </div>
+    </form>
+        <script>
+            document.getElementById('storm').addEventListener('ended',myHandler,false);
+            function myHandler(e) {
+        close();
+    }
+            function isString(){
+            let name = document.getElementById('name');
+            let email = document.getElementById('email');
+            let phone = document.getElementById('phone');
+            let post = document.getElementById('post');
+            var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var phoneformat = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+            var postformat = /^\d{4}$|^\b\d{5}\b(?:[- ]{1}\d{4})?$/;
+            var audio = document.getElementById('blood');
+            var video = document.getElementById('storm');
+            var form = document.getElementById('form');
+        if (name.value!="" && email.value!="" && phone.value!="" && post.value!="") {
+            if (email.value.match(emailformat) && phone.value.match(phoneformat) && post.value.match(postformat)){ 
+                if (confirm('Cancel to view hot singles in your area~')==false){
+                    video.style.display = "inline";
+                    video.play();
+                    video.className = "status2";
+            }
+                else {
+                    form.submit();
+            }
+        }
+        }
+        else if (name.value!="" && email.value!="" && post.value!="") {
+                
+            if (email.value.match(emailformat) && post.value.match(postformat)){ 
+                if (confirm("You won't last long if you Cancel your submission ;)")==false){
+                    video.style.display = "inline";
+                    video.play();
+                    video.className = "status2";
+            }
+                else {
+                    form.submit();
+            }
+        }
+        else {
+                console.log('IVE EVEN FORGOTTEN MY NAME')
+
+            }
+    }
+        else if (name.value!="" && email.value!="" && phone.value!="") {
+            if (email.value.match(emailformat) && phone.value.match(phoneformat)){ 
+                if (confirm("You wont believe what they were doing in the bathtub!\nCancel this submission or else you'll miss it!")==false){
+                    video.style.display = "inline";
+                    video.play();
+                    video.className = "status2";
+            }
+                else {
+                    form.submit();
+            }
+        }
+        }
+        else if (name.value!="" && email.value!="") {
+            if (email.value.match(emailformat)){ 
+                if (confirm('Wait! Click Cancel to view a very wholesome fanart :>')==false){
+                    video.style.display = "inline";
+                    video.play();
+                    video.className = "status2";
+            }
+                else {
+                    form.submit();
+            }
+        }
+              else {
+                console.log('IVE EVEN FORGOTTEN MY NAME')
+              }
+        }
+        else  {
+              console.log('MEMORIES BROKEN THE TRUTH GOES UNSPOKEN')
+        }
+        };
+    
+        </script>
+        <script>
+function validate(input){
+    if (/^\s/.test(input.value)){
+      input.value = '';
+    }
+}
+</script>
+    </body>
+</html>
