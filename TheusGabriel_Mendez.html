@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--this is made in 1920x1080, if broken, it aint my fault pls-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Interstellar Voyage</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="TheusGabriel_Mendez.css">
+        <script type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body> 
+        <audio autoplay id="star"><source src="mgo.mp3" type="audio/mpeg"></source>
+        </audio>
+        
+        <div class="intro">
+            
+            <div class="title">
+                <nav id="title">
+                <li>
+                <p><a href="#"><span>TYOS'<img src="hoshiyomi.png"></span><span style="color: rgb(0, 89, 255)">STELLAR ADVENTURE</span></a></p>
+                </li>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="adv">
+        <h2 style="font-weight: normal; font-size: xx-large; margin-top: 0;">Travelling Across The Cosmos</h2> 
+            <p>In the vastness of space and the immensity of time, it is my pleasure to share with you a journey of a lifetime. Literally.</p>
+            <p> Life is an adventure, or so they say afterall. I guess it does sound like a lame cliche, however, it would be utterly foolish to dismiss it as mere nonsense.</p>
+            <br>
+            <p>Now, where were we? Ah, yes. The trip encompassing a lifetime. In particular, we will take a look at a young man's pathetic and insignificant existence. <br>He has lived for 19 years on the third planet of the unnamed solar system of the Milky Way Galaxy. They named it Earth, if I recall correctly.</p> <br>
+            <p>Hmm? How do I know all of this? Well, of course I would. He's me.</p>
+        </div>
+        <div class="mid">
+            <div class="text">
+                
+                    <label class="grand" for="startEnd"><img src="midnight.jpg" class="grand" id="orchestra" onclick="document.getElementById('star').play(), document.getElementById('text').style.display = 'block'" ondblclick=""></label>
+                    <input type="checkbox" id="startEnd" class="grand"/>
+                    <div class="story" id="text">
+                    <h2 style="font-weight: normal; font-size: xx-large; margin-top: 0;">On the 27th Midnight of April 2003,</h2> 
+                    <p>The entity known as Theus was born. From the depths of his mother's womb, a weak, small and disfigured creature has sprung forth. It has no recollection of the said event, but it is deemed to be an important day by society nonetheless.</p>
+                    <br>
+                    <p>It was nothing special really. My birth didn't really make a huge impact or anything.</p>
+                    <br> 
+                    <p>For instance:</p>
+                    <ul>
+                        <li>I didn't change the world</li>
+                        <li>Didn't solve world hunger</li>
+                        <li>Haven't caused world peace</li>
+                        <li>Nor did I cure cancer</li>
+                    </ul>
+                    <p>In the grand scheme of things, I was simply born.<br> Regardless of that fact, or rather because of it, I was swept up in the Great Voyage that is life.</p>
+                    <br>
+                    <p>El Psy Congroo.</p>
+                    
+                    </div>
+                    <br>
+            </div>
+        </div>
+        <div class="spec">
+        <table>
+            <caption class="photo"><span class="photo">Interstellar Shots</span></caption>
+            <tr>
+                <td><img src="pic.jpg"></td>
+                <td><img src="pic1.jpg"></td>
+                <td><img src="pic2.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="pic3.jpg"></td>
+                <td><img src="pic4.jpg"></td>
+                <td><img src="pic5.jpg"></td>
+            </tr>
+        </table>
+        </div>
+        <div class="outro">
+            <div class="title2">
+                <p>©Theus Gabriel Mendez</p>
+            </div>
+        </div>
+        <script>
+            var audio = document.getElementById('star');
+            audio.volume = 0.3;
+            function show() {
+            document.getElementById('text').style.display = "block";
+            }
+            window.addEventListener("scroll", function(){
+            var header = document.querySelector("nav");
+            header.classList.toggle("sticky", window.scrollY > 320);
+            })
+        </script>
+    </body>
+</html>
